@@ -1,0 +1,6 @@
+{
+    "mongodbURI": "mongodb+srv://root:root@dietapp.2rhon.mongodb.net/dietapp?retryWrites=true&w=majority",
+    "jwt_secret_key": "dietmanagementapp"
+}
+
+
