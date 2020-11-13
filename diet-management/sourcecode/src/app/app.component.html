@@ -1,0 +1,17 @@
+<div class="container">
+    <mat-toolbar color="primary">
+        <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+        <a routerLink="/home" class="title">
+            <h3>Diet Management App</h3>
+        </a>
+        <ul>
+            <li *ngIf="isLoggedIn"><a routerLink="/home" routerLinkActive="active">Home</a></li>
+            <li *ngIf="!isLoggedIn"><a routerLink="/user" routerLinkActive="active">Register/Login</a></li>
+            <li *ngIf="isLoggedIn"><a routerLink="/food" routerLinkActive="active">Food</a></li>
+            <li *ngIf="isLoggedIn" routerLinkActive="active"><a (click)="logoutUser()">Logout</a></li>
+        </ul>
+    </mat-toolbar>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,31 @@
+ul {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+li {
+    padding: 20px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    padding: 2px;
+    cursor: pointer;
+}
+
+a.title {
+    text-decoration: none;
+}
+
+a.title:hover {
+    border-bottom: none;
+}
+
+a.active,
+a:hover {
+    border-bottom: 2px solid #fff;
+}

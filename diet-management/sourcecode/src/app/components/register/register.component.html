@@ -1,0 +1,85 @@
+<div class="reg-container">
+    <div class="toggle">
+        <h3>{{ isLogin ? "Don't have an Account ?" : "Have an Account ?"}}</h3>
+        <button mat-raised-button color="secondary" (click)="toggleLink()">{{isLogin ? "Register": "Login"}}</button>
+    </div>
+    <div class="reg-form" *ngIf="!isLogin">
+        <form (ngSubmit)="registerUser(regForm)" #regForm="ngForm">
+            <h1>Sign Up</h1>
+            <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
+            <p *ngIf="matchError" class="error">Passwords doesn't match.</p>
+            <table cellspacing="10">
+                <tr>
+                    <td>
+                        <mat-form-field>
+                            <mat-label>First name</mat-label>
+                            <input matInput ngModel name="firstname" required>
+                            <mat-error>Please enter first name.</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field>
+                            <mat-label>Last Name</mat-label>
+                            <input matInput ngModel name="lastname" required>
+                            <mat-error>Please enter last name.</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+            <table cellspacing="10">
+                <tr>
+                    <mat-form-field class="username">
+                        <mat-label>Username</mat-label>
+                        <input matInput ngModel name="username" required>
+                        <mat-error>Please enter user name.</mat-error>
+                    </mat-form-field>
+                </tr>
+            </table>
+
+            <table cellspacing="10">
+                <tr>
+                    <td>
+                        <mat-form-field>
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput #password ngModel name="password" required minlength="6">
+                            <mat-hint align="end">{{password.value.length}} / 6</mat-hint>
+                            <mat-error>Please enter a valid password of minimum 6 letters.</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field>
+                            <mat-label>Confirm Password</mat-label>
+                            <input type="password" matInput ngModel name="cnfpwd" #cnfpwd required (change)="checkPasswordMatch(password.value, cnfpwd.value)">
+                            <mat-error *ngIf="!cnfpwd.value">Please enter password again.</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+            <button mat-raised-button color="accent" [disabled]="regForm.invalid || matchError">Register</button>
+        </form>
+    </div>
+    <div class="login-form" *ngIf="isLogin">
+        <form (ngSubmit)="loginUser(loginForm)" #loginForm="ngForm">
+            <h1>Login</h1>
+            <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
+            <table cellspacing="0">
+                <tr>
+                    <mat-form-field class="username">
+                        <mat-label>Username</mat-label>
+                        <input matInput ngModel name="username" required>
+                        <mat-error>Please enter user name.</mat-error>
+                    </mat-form-field>
+                </tr>
+                <tr>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput #password ngModel name="password" required minlength="6">
+                        <mat-hint align="end">{{password.value.length}} / 6</mat-hint>
+                        <mat-error>Please enter a valid password of minimum 6 letters.</mat-error>
+                    </mat-form-field>
+                </tr>
+            </table>
+            <button mat-raised-button color="accent" [disabled]="loginForm.invalid">Sign In</button>
+        </form>
+    </div>
+</div>
