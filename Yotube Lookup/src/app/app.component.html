@@ -1,0 +1,44 @@
+<!-- Page Content -->
+<div class="container">
+
+  <header class="bg-success text-center p-2  py-3 mb-4">
+    <div class="container">
+      <h1 class="font-weight-light text-white">
+        <i class="fab fa-youtube"></i> <a class="text-white" href="#">YOUTUBE SEARCH</a></h1>
+
+    </div>
+  </header>
+  <form>
+    <div class="form-group">
+      <div class="form-group col-lg-6 col-lg-offset-3 input-group">
+        <input #key class="form-control" placeholder="Recipe name" type="text">
+        <label (click)="getVideos()" class="input-group-addon">Go</label>
+
+      </div>
+
+    </div>
+  </form>
+
+
+  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Loading...</p>
+  </ngx-spinner>
+  <div class="row">
+   <div *ngFor="let video of videos" class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-0 shadow vh-50">
+        <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank">
+          <img [src]="video.snippet.thumbnails.medium.url" class="card-img-top" alt="..."></a>
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">
+            <a href="https://www.youtube.com/watch?v={{video.id.videoId}}">{{video.snippet.title}}
+            </a></h5>
+          <div class="card-text text-black-50">{{video.snippet.description.slice(0, 100)}}</div>
+         </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
