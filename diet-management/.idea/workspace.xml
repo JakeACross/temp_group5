@@ -17,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/frontend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1k7EArru6By4jC0MiWDg0Tp5tnn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -32,7 +32,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\KRISH\OneDrive\Documents\GitHub\temp_group5\diet-management\frontend\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\KRISH\OneDrive\Documents\GitHub\temp_group5\diet-management\sourcecode\frontend\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,6 +46,10 @@
       <workItem from="1605043092478" duration="276000" />
       <workItem from="1605289144333" duration="2432000" />
       <workItem from="1605304881187" duration="618000" />
+      <workItem from="1605324603803" duration="1381000" />
+      <workItem from="1605597600290" duration="4000" />
+      <workItem from="1606900368621" duration="366000" />
+      <workItem from="1606979686425" duration="599000" />
     </task>
     <servers />
   </component>
