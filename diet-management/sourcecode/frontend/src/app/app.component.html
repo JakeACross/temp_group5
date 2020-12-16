@@ -9,9 +9,11 @@
         <ul>
             <li *ngIf="isLoggedIn"><a routerLink="/home" routerLinkActive="active">Home</a></li>
             <li *ngIf="!isLoggedIn"><a routerLink="/user" routerLinkActive="active">Register/Login</a></li>
-            <li *ngIf="isLoggedIn"><a routerLink="/food" routerLinkActive="active">Food</a></li>
+            <!-- <li *ngIf="isLoggedIn"><a routerLink="/food" routerLinkActive="active">Food</a></li> -->
             <li *ngIf="isLoggedIn" routerLinkActive="active"><a (click)="logoutUser()">Logout</a></li>
         </ul>
     </mat-toolbar>
+    <div class="wrapper">
+        <router-outlet></router-outlet>
+    </div>
 </div>
-<router-outlet></router-outlet>

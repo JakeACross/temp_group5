@@ -1,0 +1,29 @@
+.row {
+    /* margin-top: 10px; */
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+mat-form-field {
+    width: 50%;
+}
+
+table {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+tr.mat-footer-row {
+    font-weight: bold;
+}
+
+.mat-table-sticky {
+    border-top: 1px solid #e0e0e0;
+}
+
+.nutrition-info {
+    padding: 10px;
+}

@@ -6,15 +6,24 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { RecipeSearchComponent } from './components/recipe-search/recipe-search.component';
+import { NutritionAnalysisComponent } from './components/nutrition-analysis/nutrition-analysis.component';
+import { YoutubeSearchComponent } from './components/youtube-search/youtube-search.component';
+import { NutritionPopupComponent } from './components/nutrition-popup/nutrition-popup.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    RecipeSearchComponent,
+    NutritionAnalysisComponent,
+    YoutubeSearchComponent,
+    NutritionPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -22,9 +31,12 @@ import { HomeComponent } from './components/home/home.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   providers: [],
+  entryComponents:[NutritionPopupComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

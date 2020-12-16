@@ -84,7 +84,7 @@ module.exports = "ul {\r\n    list-style: none;\r\n    display: flex;\r\n    fle
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <mat-toolbar color=\"primary\">\r\n        <!-- <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with menu icon\">\r\n      <mat-icon>menu</mat-icon>\r\n    </button> -->\r\n        <a routerLink=\"/home\" class=\"title\">\r\n            <h3>Health Management App</h3>\r\n        </a>\r\n        <ul>\r\n            <li *ngIf=\"isLoggedIn\"><a routerLink=\"/home\" routerLinkActive=\"active\">Home</a></li>\r\n            <li *ngIf=\"!isLoggedIn\"><a routerLink=\"/user\" routerLinkActive=\"active\">Register/Login</a></li>\r\n            <li *ngIf=\"isLoggedIn\"><a routerLink=\"/food\" routerLinkActive=\"active\">Food</a></li>\r\n            <li *ngIf=\"isLoggedIn\" routerLinkActive=\"active\"><a (click)=\"logoutUser()\">Logout</a></li>\r\n        </ul>\r\n    </mat-toolbar>\r\n</div>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<div class=\"container\">\r\n    <mat-toolbar color=\"primary\">\r\n        <!-- <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with menu icon\">\r\n      <mat-icon>menu</mat-icon>\r\n    </button> -->\r\n        <a routerLink=\"/home\" class=\"title\">\r\n            <h3>Diet Management App</h3>\r\n        </a>\r\n        <ul>\r\n            <li *ngIf=\"isLoggedIn\"><a routerLink=\"/home\" routerLinkActive=\"active\">Home</a></li>\r\n            <li *ngIf=\"!isLoggedIn\"><a routerLink=\"/user\" routerLinkActive=\"active\">Register/Login</a></li>\r\n            <li *ngIf=\"isLoggedIn\"><a routerLink=\"/food\" routerLinkActive=\"active\">Food</a></li>\r\n            <li *ngIf=\"isLoggedIn\" routerLinkActive=\"active\"><a (click)=\"logoutUser()\">Logout</a></li>\r\n        </ul>\r\n    </mat-toolbar>\r\n</div>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -549,7 +549,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\KRISH\OneDrive\Documents\GitHub\temp_group5\diet-management\sourcecode\frontend\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\diet-management\frontend\src\main.ts */"./src/main.ts");
 
 
 /***/ })

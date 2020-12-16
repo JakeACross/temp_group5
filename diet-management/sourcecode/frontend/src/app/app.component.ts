@@ -13,14 +13,19 @@ export class AppComponent implements OnInit {
   constructor(private authService: AuthService, private router:Router) {}
 
   ngOnInit() {
-    this.authService.isLoggedIn.subscribe(data => {
-      console.log(data)
-      this.isLoggedIn = data;
-    })
+    if(localStorage.getItem('token')) {
+      this.isLoggedIn = true;
+    }
+      this.authService.isLoggedIn.subscribe(data => {
+        console.log(data)
+        this.isLoggedIn = data;
+      })
+
   }
 
   logoutUser() {
     this.authService.doLogout();
+    this.isLoggedIn = false;
     this.router.navigate(['/user']);
   }
 }

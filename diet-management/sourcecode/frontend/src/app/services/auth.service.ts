@@ -27,11 +27,12 @@ export class AuthService {
   }
 
   isAuth() {
-    return this.isAuthenticated;
+    return localStorage.getItem('token') || this.isAuthenticated;
   }
 
 
   doLogout() {
     this.changeLoginStatus(false);
+    localStorage.removeItem('token')
   }
 }

@@ -1,0 +1,35 @@
+<div class="content">
+    <div class="nutrition-info">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Nutrition Information</h1>
+            </div>
+        </div>
+        <div class="row">
+            <mat-form-field class="example-full-width">
+                <mat-label>Ingredient Name</mat-label>
+                <input matInput placeholder="Ex. 1 large apple" [(ngModel)]="ingredientName" class="form-control">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <button mat-raised-button color="accent" (click)="getNutritionDetail()">Get Details</button>
+        </div>
+        <div class="loader" *ngIf="showLoader">Loading...</div>
+        <table mat-table [dataSource]="nutrientInfo['nutrients']" *ngIf="!showLoader && nutrientInfo['nutrients']">
+            <!-- Item Column -->
+            <ng-container matColumnDef="label">
+                <th mat-header-cell *matHeaderCellDef> Nutrient Label</th>
+                <td mat-cell *matCellDef="let nutrient"> {{nutrient.label}} </td>
+            </ng-container>
+
+            <!-- Cost Column -->
+            <ng-container matColumnDef="value">
+                <th mat-header-cell *matHeaderCellDef> Nutrient Value </th>
+                <td mat-cell *matCellDef="let nutrient"> {{nutrient.value | number: '1.2-2'}}{{nutrient.unit}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>

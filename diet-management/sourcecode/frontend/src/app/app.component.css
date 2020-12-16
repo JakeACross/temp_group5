@@ -29,3 +29,8 @@ a.active,
 a:hover {
     border-bottom: 2px solid #fff;
 }
+
+.wrapper {
+    min-height: 100vh;
+    background: rgba(68, 68, 68, 0.4);
+}

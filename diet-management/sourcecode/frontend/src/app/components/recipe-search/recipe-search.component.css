@@ -1,0 +1,120 @@
+ .row {
+     margin-top: 10px;
+     width: 80%;
+     margin: auto;
+     text-align: center;
+ }
+ 
+ mat-form-field {
+     width: 50%;
+ }
+ 
+ .recipe-list {
+     width: 80%;
+     margin: 0 auto;
+ }
+ 
+ .recipe-card {
+     max-width: 250px;
+ }
+ 
+ .text-center {
+     text-align: center;
+ }
+ /* .recipe-card img {
+    width: 100%
+} */
+ 
+ .recipe-header-image {
+     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+     background-size: cover;
+ }
+ 
+ .mt-tab-container {
+     width: 80%;
+     margin: 0 auto;
+     padding: 20px;
+ }
+ 
+ .options {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+ }
+ 
+ .options mat-form-field {
+     width: 70%
+ }
+ 
+ .close-icon {
+     cursor: pointer;
+ }
+ 
+ .selected {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .selected-item {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     border: 3px solid crimson;
+     border-radius: 25px;
+     padding: 5px;
+     margin-right: 10px;
+     margin-left: 10px;
+ }
+ /* .recipe-card {
+     display: inline-block;
+ } */
+ 
+ .recipe-list {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-rows: auto;
+     gap: 10px;
+     margin-top: 20px;
+ }
+ 
+ .recipe-card {
+     margin-bottom: 20px;
+     border: 1px solid #FF4081;
+ }
+ 
+ .nutrition-btn {
+     bottom: 10px;
+     position: absolute;
+     margin-top: 10px;
+     left: 20px;
+ }
+ 
+ .mat-card-header .mat-card-title {
+     font-size: 14px;
+ }
+ 
+ .mat-card-content {
+     height: 250px;
+     overflow: hidden;
+ }
+ 
+ .recipe-name {
+     margin-top: 25px;
+ }
+ 
+ .example-full-width {
+     width: 45%;
+     margin-right: 20px;
+ }
+ 
+ .mat-form-field-label {
+     color: rgb(255, 255, 255) !important;
+ }
+ 
+ .mat-form-field-underline {
+     background-color: rgb(255, 255, 255) !important;
+ }
+ 
+ .mat-select-value {
+     color: rgb(255, 255, 255) !important;
+ }

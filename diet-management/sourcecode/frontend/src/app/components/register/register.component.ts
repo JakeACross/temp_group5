@@ -15,12 +15,16 @@ export class RegisterComponent implements OnInit {
   constructor(private authService:AuthService, private router:Router) { }
 
   ngOnInit() {
+    if(localStorage.getItem('token')) {
+      this.router.navigate(['/home'])
+    }
   }
 
   registerUser(f: NgForm) {
     const user = {...f.value};
     if(f.valid) {
       this.authService.register(user).subscribe(data => {
+        localStorage.setItem('token', data['token'])
         this.router.navigate(['/home']);
         this.authService.changeLoginStatus(true);
       }, (err) => {
@@ -32,6 +36,7 @@ export class RegisterComponent implements OnInit {
 
   loginUser(f:NgForm) {
     this.authService.loginUser(f.value).subscribe(data => {
+      localStorage.setItem('token', data['token'])
       this.router.navigate(['/home']);
       this.authService.changeLoginStatus(true);
     }, (err) => {

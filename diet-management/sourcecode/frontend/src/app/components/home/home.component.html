@@ -1,3 +1,11 @@
-<p>
-  home works!
-</p>
+<mat-tab-group mat-align-tabs="center" class="bg-image" [selectedIndex]="0">
+    <mat-tab label="Recipe Search" [aria-label]="'accent'">
+        <app-recipe-search></app-recipe-search>
+    </mat-tab>
+    <mat-tab label="Nutrition Analysis" [aria-label]="'accent'">
+        <app-nutrition-analysis></app-nutrition-analysis>
+    </mat-tab>
+    <mat-tab label="Youtube Search" [aria-label]="'accent'">
+        <app-youtube-search></app-youtube-search>
+    </mat-tab>
+</mat-tab-group>

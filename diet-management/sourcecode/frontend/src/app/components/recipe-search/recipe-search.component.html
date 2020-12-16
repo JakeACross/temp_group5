@@ -1,0 +1,112 @@
+<div class="content">
+    <div class="mt-tab-container">
+        <h1 class="text-center">Recipe Information</h1>
+        <div class="options" *ngIf="!mealTypeSelected">
+            <div class="cusine">
+                <h3>Select Cusine Type</h3>
+                <mat-form-field [color]="'accent'">
+                    <mat-label>Select an option</mat-label>
+                    <mat-select [(value)]="cusineType">
+                        <mat-option value="chinese">Chinese</mat-option>
+                        <mat-option value="indian">Indian</mat-option>
+                        <mat-option value="american">American</mat-option>
+                        <mat-option value="mexican">Mexican</mat-option>
+                        <mat-option value="italain">Italian</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="meal">
+                <h3>Select Meal Type</h3>
+                <mat-form-field appearance="" [color]="'accent'">
+                    <mat-label>Select an option</mat-label>
+                    <mat-select [(value)]="mealType">
+                        <mat-option value="breakfast">Breakfast</mat-option>
+                        <mat-option value="lunch">Lunch</mat-option>
+                        <mat-option value="snack">Snack</mat-option>
+                        <mat-option value="dinner">Dinner</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="diet">
+                <h3>Select Diet Type</h3>
+                <mat-form-field [color]="'accent'">
+                    <mat-label>Select an option</mat-label>
+                    <mat-select [(value)]="dietLabel">
+                        <mat-option value="balanced">Balanced</mat-option>
+                        <mat-option value="high-protein">High Protein</mat-option>
+                        <mat-option value="low-fat">Low Fat</mat-option>
+                        <mat-option value="low-carb">Low Carb</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+        </div>
+        <div class="text-center" *ngIf="!mealTypeSelected">
+            <button mat-raised-button color="accent" (click)="handleOptionSelect()">Continue</button>
+        </div>
+        <div class="meal-selected-options" *ngIf="mealTypeSelected">
+
+            <div class="selected text-center">
+                Selected options :
+                <div class="selected-item" *ngIf="cusineType">
+                    <span class="text">{{cusineType}}</span>
+                    <mat-icon class="close-icon" (click)="cusineType=''" aria-hidden="false">close</mat-icon>
+                </div>
+                <div class="selected-item" *ngIf="mealType">
+                    <span class="text">{{mealType}}</span>
+                    <mat-icon class="close-icon" (click)="mealType=''" aria-hidden="false">close</mat-icon>
+                </div>
+                <div class="selected-item" *ngIf="dietLabel">
+                    <span class="text">{{dietLabel}}</span>
+                    <mat-icon class="close-icon" (click)="dietLabel=''" aria-hidden="false">close</mat-icon>
+                </div>
+            </div>
+
+
+            <div class="text-center" *ngIf="!cusineType && !mealType && !dietLabel">
+                <p>
+                    You have not selected any options
+                </p>
+                <button mat-raised-button color="primary" (click)="resetOptions()">Select now</button>
+            </div>
+        </div>
+        <div class="recipe-name" *ngIf="mealTypeSelected">
+            <div class="row">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Recipe Name</mat-label>
+                    <input matInput placeholder="Ex. Pizza" [(ngModel)]="recipeName" class="form-control">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Exclude Ingredient Name</mat-label>
+                    <input matInput placeholder="Ex. Pizza" [(ngModel)]="excluded" class="form-control">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <button mat-raised-button color="accent" [disabled]="!recipeName" (click)="getRecipeList()">Get Details</button>
+            </div>
+        </div>
+        <div class="loader" *ngIf="showLoader">Loading...</div>
+        <div class="recipe-list" *ngIf="!showLoader && recipesList.length> 0">
+            <mat-card class="recipe-card" *ngFor="let recipe of recipesList">
+                <mat-card-header>
+                    <div mat-card-avatar class="recipe-header-image" [ngStyle]="{'background-image': 'url(' + recipe.image + ')'}"></div>
+                    <mat-card-title>{{recipe.name}}</mat-card-title>
+                    <!-- <mat-card-subtitle>Recipe subtitle</mat-card-subtitle> -->
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-list dense>
+                        <mat-list-item *ngFor="let ingredient of recipe.ingredients">{{ingredient}}
+                            <mat-divider></mat-divider>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+                <mat-card-footer>
+                    <button mat-raised-button class="nutrition-btn" (click)="openNutritionDetails(recipe)" color="accent">Get Nutrition Analysis</button>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+
+
+    </div>
+</div>

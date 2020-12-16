@@ -598,8 +598,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\KRISH\OneDrive\Documents\GitHub\temp_group5\diet-management\sourcecode\frontend\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
-module.exports = __webpack_require__(/*! C:\Users\KRISH\OneDrive\Documents\GitHub\temp_group5\diet-management\sourcecode\frontend\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! D:\diet-management\frontend\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
+module.exports = __webpack_require__(/*! D:\diet-management\frontend\src\styles.css */"./src/styles.css");
 
 
 /***/ })
