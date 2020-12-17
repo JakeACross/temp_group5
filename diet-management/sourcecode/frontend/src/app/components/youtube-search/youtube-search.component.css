@@ -1,1 +1,12 @@
-@import "~bootstrap/dist/css/bootstrap.css"
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.text-center {
+  text-align: center;
+}
+
+
+.mt-tab-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
